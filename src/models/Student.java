@@ -63,9 +63,6 @@ public class Student{
         this.std_contacr = std_contacr;
     }
 
-    public Student(Object object, Object object2, Object object3, Object object4, Object object5, Object object6) {
-    }
-
    
 
 }

@@ -1,101 +1,80 @@
 package database;
 
+
+
 import javax.swing.*;
 
 import java.sql.*;
+
+
 
 public class DbConnection {
 
     public Connection connection;
 
-    Statement statement;
+    PreparedStatement pst;
 
     ResultSet resultSet;
 
     int value;
-    String username = "root";
-    String password = "Liban@1214";
 
-    public DbConnection() {
 
+
+    public DbConnection(){
 
         try {
 
+            String username = "root";
 
+            String password = "Appleapple!1";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/BRS", username, password);
+                    "jdbc:mysql://localhost:3306/logindb",username,password);
 
-            if (connection != null) {
 
-                System.out.println("Connected to database --> SoftwaricaDB");
 
-            } else {
+                    if(connection!=null){
 
-                System.out.println("Error connecting to database");
+                        System.out.println("Connected to database");
 
-            }
+                    }else{
 
-            statement = connection.createStatement();
+                        System.out.println("Error connecting to database");
 
-        } catch (Exception e) {
+                    }
+
+            pst = connection.prepareStatement("select * from user where username=? and password=?");
+
+        }catch (Exception e){
 
             e.printStackTrace();
 
         }
-        
-        
 
     }
-    public Connection createConnection(){
-        
-        try{
-    
-        connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/SoftwaricaDB", username, password);
 
-            if (connection != null) {
-
-                System.out.println("Connected to database --> SoftwaricaDB");
-
-            } else {
-
-                System.out.println("Error connecting to database");}}
-        
-        catch(SQLException e){
-        
-            System.out.println(e);
-        }
-                
-         return connection;
-        
-        
-        
-            }
-    
-    
 
     // Via the use of sql query
 
     // insert, update and delete
 
-    public int manipulate(String query) {
+    public int manipulate(String query){
 
         try {
 
-            value = statement.executeUpdate(query);
+            value = pst.executeUpdate(query);
 
             connection.close();
 
-        } catch (SQLIntegrityConstraintViolationException ex) {
+        }catch (SQLIntegrityConstraintViolationException ex){
 
             JOptionPane.showMessageDialog(null, "These details already exist!");
 
-        } catch (SQLException e) {
+        }catch (SQLException e){
 
             e.printStackTrace();
 
@@ -105,13 +84,15 @@ public class DbConnection {
 
     }
 
-    public ResultSet retrieve(String query) {
+
+
+    public ResultSet retrieve(String query){
 
         try {
 
-            resultSet = statement.executeQuery(query);
+            resultSet = pst.executeQuery(query);
 
-        } catch (SQLException e) {
+        }catch (SQLException e){
 
             e.printStackTrace();
 
@@ -120,10 +101,33 @@ public class DbConnection {
         return resultSet;
 
     }
+public Boolean checkLogin(String uname, String pwd) {
+        try {
+
+            pst.setString(1, uname); //this replaces the 1st  "?" in the query for username
+            pst.setString(2, pwd);    //this replaces the 2st  "?" in the query for password
+            //executes the prepared statement
+            resultSet = pst.executeQuery();
+            if (resultSet.next()) {
+                System.out.print("Success");
+                //TRUE if the query founds any corresponding data
+                return true;
+            } else {
+                System.out.print("Failed");
+                
+                return false;
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("error while validating" + e);
+            return false;
+        }
+    }
+
 
     public static void main(String[] args) {
 
-        new DbConnection().createConnection();
+        new DbConnection();
 
     }
 
