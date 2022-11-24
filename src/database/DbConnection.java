@@ -27,7 +27,7 @@ public class DbConnection {
 
             connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/SoftwaricaDB", username, password);
+                    "jdbc:mysql://localhost:3306/BRS", username, password);
 
             if (connection != null) {
 
