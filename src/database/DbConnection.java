@@ -13,24 +13,25 @@ public class DbConnection {
     ResultSet resultSet;
 
     int value;
+    String username = "root";
+    String password = "Liban@1214";
 
     public DbConnection() {
 
+
         try {
 
-            String username = "root";
 
-            String password = "root";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/BRS", username, password);
+                    "jdbc:mysql://localhost:3306/SoftwaricaDB", username, password);
 
             if (connection != null) {
 
-                System.out.println("Connected to database");
+                System.out.println("Connected to database --> SoftwaricaDB");
 
             } else {
 
@@ -45,8 +46,38 @@ public class DbConnection {
             e.printStackTrace();
 
         }
+        
+        
 
     }
+    public Connection createConnection(){
+        
+        try{
+    
+        connection = DriverManager.getConnection(
+
+                    "jdbc:mysql://localhost:3306/SoftwaricaDB", username, password);
+
+            if (connection != null) {
+
+                System.out.println("Connected to database --> SoftwaricaDB");
+
+            } else {
+
+                System.out.println("Error connecting to database");}}
+        
+        catch(SQLException e){
+        
+            System.out.println(e);
+        }
+                
+         return connection;
+        
+        
+        
+            }
+    
+    
 
     // Via the use of sql query
 
@@ -92,7 +123,7 @@ public class DbConnection {
 
     public static void main(String[] args) {
 
-        new DbConnection();
+        new DbConnection().createConnection();
 
     }
 
