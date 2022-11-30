@@ -6,15 +6,23 @@ public class Bus {
     private String from_city;
     private String to_city;
     private String status;
+<<<<<<< HEAD
     private String license_no;
 
     public Bus(int bus_no, int seat_num, String from_city, String to_city, String status, String license_no) {
+=======
+
+    public Bus(int bus_no, int seat_num, String from_city, String to_city, String status) {
+>>>>>>> 837d3e218f57e9edbd1f812dabfab133ce834cdb
         this.bus_no = bus_no;
         this.seat_num = seat_num;
         this.from_city = from_city;
         this.to_city = to_city;
         this.status = status;
+<<<<<<< HEAD
         this.license_no = license_no;
+=======
+>>>>>>> 837d3e218f57e9edbd1f812dabfab133ce834cdb
     }
 
     public int getBus_no() {
@@ -57,6 +65,7 @@ public class Bus {
         this.status = status;
     }
 
+<<<<<<< HEAD
     public String getLicense_no() {
         return this.license_no;
     }
@@ -65,4 +74,6 @@ public class Bus {
         this.license_no = license_no;
     }
 
+=======
+>>>>>>> 837d3e218f57e9edbd1f812dabfab133ce834cdb
 }

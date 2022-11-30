@@ -6,16 +6,24 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import controller.BusController;
+<<<<<<< HEAD
 import controller.UserController;
 import controller.TicketController;
 import models.Bus;
 import models.User;
+=======
+import controller.StudentController;
+import controller.TicketController;
+import models.Bus;
+import models.Student;
+>>>>>>> 837d3e218f57e9edbd1f812dabfab133ce834cdb
 import models.Ticket;
 
 public class view {
     public static void main(String[] args) {
 
         try {
+<<<<<<< HEAD
             // Bus b1 = new Bus(1, 0, null, null, null);
             // BusController bc = new BusController();
             // ResultSet rSet = bc.selectdetails(b1);
@@ -86,6 +94,19 @@ public class view {
         } catch (
 
         Exception e) {
+=======
+            Bus b1 = new Bus(1, 0, null, null, null);
+            BusController bc = new BusController();
+            ResultSet rSet = bc.selectdetails(b1);
+            if(rSet.next()){
+                String from = rSet.getString(1);
+                String to= rSet.getString(2);
+                System.out.println(from + to);
+            }
+            
+            
+        } catch (Exception e) {
+>>>>>>> 837d3e218f57e9edbd1f812dabfab133ce834cdb
             // TODO Auto-generated catch block
             JOptionPane.showMessageDialog(null, e);
             // e.printStackTrace();

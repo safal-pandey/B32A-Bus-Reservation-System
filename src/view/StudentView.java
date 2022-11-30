@@ -1,5 +1,6 @@
 package view;
 
+<<<<<<< HEAD
 import controller.UserController;
 import models.User;
 
@@ -7,6 +8,15 @@ public class StudentView {
     public static void main(String[] args) {
         User s1 = new User(2, "Prasanna", 20, "Chitwan", 364548);
         UserController sc = new UserController();
+=======
+import controller.StudentController;
+import models.Student;
+
+public class StudentView {
+    public static void main(String[] args) {
+        Student s1 = new Student(2, "Prasanna", 20, "Chitwan", 364548);
+        StudentController sc = new StudentController();
+>>>>>>> 837d3e218f57e9edbd1f812dabfab133ce834cdb
         int insertedStudent = sc.insertStudent(s1);
 
         if (insertedStudent > 0) {
