@@ -1,6 +1,7 @@
 package view;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -25,6 +26,7 @@ public class searchticket extends javax.swing.JFrame {
     public searchticket() {
         initComponents();
         table();
+        combo();
     }
 
     /**
@@ -50,6 +52,7 @@ public class searchticket extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ticketTable = new javax.swing.JTable();
+        PriceFIlter = new javax.swing.JComboBox<>();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -59,6 +62,11 @@ public class searchticket extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("Filter");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Home");
@@ -103,7 +111,10 @@ public class searchticket extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(PriceFIlter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton2)
                                 .addGap(27, 27, 27)
@@ -137,7 +148,9 @@ public class searchticket extends javax.swing.JFrame {
                     .addComponent(jButton6)
                     .addComponent(jButton7))
                 .addGap(46, 46, 46)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(PriceFIlter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(151, 151, 151))
@@ -159,6 +172,66 @@ public class searchticket extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            String price = null;
+            Object selecteditem = PriceFIlter.getSelectedItem();
+            if(selecteditem!=null){
+                price = selecteditem.toString();
+            }
+            DefaultTableModel model = (DefaultTableModel) ticketTable.getModel();
+                model.setRowCount(0);
+            Ticket t1 = new Ticket(0, 0, null, null, null, Integer.parseInt(price));
+                   TicketController tc = new TicketController();
+                   ResultSet result = tc.filter(t1);
+                   while (result.next()) {
+                    String ticket = result.getString(1);
+                    String bus = result.getString(2);
+                    String seat_no = result.getString(4);
+                    String ticket_price = result.getString(6);
+
+                    // JOptionPane.showMessageDialog(null, ticket + " " + bus + " " + seat_no + " "
+                    // + ticket_price);
+                    Object[] row = { ticket, bus, seat_no, ticket_price };
+                    model.addRow(row);
+
+                }
+        } catch (NumberFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public void combo(){
+           try {
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0);
+               TicketController tc = new TicketController();
+               ResultSet result = tc.priceTicket(t1);
+               
+               while(result.next()){
+                    String item = result.getString(1);
+                    boolean exist=false;
+                    for (int index = 0; index < PriceFIlter.getItemCount(); index++) {
+                        if (item.equals(PriceFIlter.getItemAt(index))) {
+                            exist=true;
+                        }
+                        
+                        
+                    }
+                    if(exist!=true){
+                        PriceFIlter.addItem(item);
+                    }
+                        }
+                      
+               
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     public void table() {
         try {
             DefaultTableModel model = (DefaultTableModel) ticketTable.getModel();
@@ -228,6 +301,7 @@ public class searchticket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> PriceFIlter;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

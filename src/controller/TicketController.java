@@ -47,4 +47,19 @@ public class TicketController {
         return result;
     }
 
+    public ResultSet priceTicket(Ticket ticket){
+        String selectQuery = "select ticket_price from ticket ";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectQuery);
+        return result;
+
+    }
+    public ResultSet filter(Ticket ticket){
+        int price = ticket.getticket_price();
+        String insertQuery = "select * from ticket where ticket_price='"+price+"'";
+
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(insertQuery);
+        return result;
+    }
 }
