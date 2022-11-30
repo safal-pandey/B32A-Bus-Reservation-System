@@ -1,12 +1,8 @@
 package database;
 
-
-
 import javax.swing.*;
 
 import java.sql.*;
-
-
 
 public class DbConnection {
 
@@ -18,37 +14,33 @@ public class DbConnection {
 
     int value;
 
-
-
-    public DbConnection(){
+    public DbConnection() {
 
         try {
 
-            String username = "root";
+            String username = "sql6580643";
 
-            String password = "Appleapple!1";
+            String password = "B4gYDYYSZV";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/logindb",username,password);
+                    "jdbc:mysql://sql6.freesqldatabase.com/sql6580643", username, password);
 
+            if (connection != null) {
 
+                System.out.println("Connected to database");
 
-                    if(connection!=null){
+            } else {
 
-                        System.out.println("Connected to database");
+                System.out.println("Error connecting to database");
 
-                    }else{
-
-                        System.out.println("Error connecting to database");
-
-                    }
+            }
 
             pst = connection.prepareStatement("select * from user where username=? and password=?");
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
 
@@ -56,13 +48,11 @@ public class DbConnection {
 
     }
 
-
-
     // Via the use of sql query
 
     // insert, update and delete
 
-    public int manipulate(String query){
+    public int manipulate(String query) {
 
         try {
 
@@ -70,11 +60,11 @@ public class DbConnection {
 
             connection.close();
 
-        }catch (SQLIntegrityConstraintViolationException ex){
+        } catch (SQLIntegrityConstraintViolationException ex) {
 
             JOptionPane.showMessageDialog(null, "These details already exist!");
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
 
             e.printStackTrace();
 
@@ -84,15 +74,13 @@ public class DbConnection {
 
     }
 
-
-
-    public ResultSet retrieve(String query){
+    public ResultSet retrieve(String query) {
 
         try {
 
             resultSet = pst.executeQuery(query);
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
 
             e.printStackTrace();
 
@@ -101,20 +89,21 @@ public class DbConnection {
         return resultSet;
 
     }
-public Boolean checkLogin(String uname, String pwd) {
+
+    public Boolean checkLogin(String uname, String pwd) {
         try {
 
-            pst.setString(1, uname); //this replaces the 1st  "?" in the query for username
-            pst.setString(2, pwd);    //this replaces the 2st  "?" in the query for password
-            //executes the prepared statement
+            pst.setString(1, uname); // this replaces the 1st "?" in the query for username
+            pst.setString(2, pwd); // this replaces the 2st "?" in the query for password
+            // executes the prepared statement
             resultSet = pst.executeQuery();
             if (resultSet.next()) {
                 System.out.print("Success");
-                //TRUE if the query founds any corresponding data
+                // TRUE if the query founds any corresponding data
                 return true;
             } else {
                 System.out.print("Failed");
-                
+
                 return false;
             }
         } catch (Exception e) {
@@ -123,7 +112,6 @@ public Boolean checkLogin(String uname, String pwd) {
             return false;
         }
     }
-
 
     public static void main(String[] args) {
 
