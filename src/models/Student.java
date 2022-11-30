@@ -1,79 +1,68 @@
 package models;
 
-public class Student {
-	// creation of instance variable
-	private String user_fname;
-	private String user_lname;
-	private String user_email;
-	private String user_contact;
-	private String user_address;
-	private String user_pass;
+public class Student{
+    // creation of instance variable
+    private int std_id;
+    private String std_name;
+    private int std_age;
+    private String std_address;
+    private int std_contacr;
 
-	// creation of public getter and setter --> for student ID
-	public String getUser_fname() {
-		return this.user_fname;
+    // creation of public getter and setter --> for student ID
+	public int getStd_id() {
+		return this.std_id;
 	}
 
-	public String getUser_lname() {
-		return this.user_lname;
+	public void setStd_id(int std_id) {
+		this.std_id = std_id;
 	}
 
-	public String getUser_email() {
-		return this.user_email;
+    // creation of public getter and setter --> for student Name
+	public String getStd_name() {
+		return this.std_name;
 	}
 
-	public String getUser_contact() {
-		return this.user_contact;
+	public void setStd_name(String std_name) {
+		this.std_name = std_name;
 	}
 
-	public String getUser_address() {
-		return this.user_address;
+    // creation of public getter and setter --> for student Age
+	public int getStd_age() {
+		return this.std_age;
 	}
 
-	public String getUser_pass() {
-		return this.user_pass;
+	public void setStd_age(int std_age) {
+		this.std_age = std_age;
 	}
 
-	public void setUser_fname(String newUser_fname) {
-		this.user_fname = newUser_fname;
+    // creation of public getter and setter --> for student Address
+	public String getStd_address() {
+		return this.std_address;
 	}
 
-	public void setUser_lname(String newUser_lname) {
-		this.user_lname = newUser_lname;
+	public void setStd_address(String std_address) {
+		this.std_address = std_address;
 	}
 
-	public void setUser_email(String newUser_email) {
-		this.user_email = newUser_email;
+    // creation of public getter and setter --> for student Contact
+	public int getStd_contacr() {
+		return this.std_contacr;
 	}
 
-	public void setUser_contact(String newUser_contact) {
-		this.user_contact = newUser_contact;
+	public void setStd_contacr(int std_contacr) {
+		this.std_contacr = std_contacr;
 	}
 
-	public void setUser_address(String newUser_address) {
-		this.user_address = newUser_address;
-	}
 
-	public void setUser_pass(String newUser_pass) {
-		this.user_pass = newUser_pass;
-	}
+    // creation of public constructor
+    public Student(int std_id, String std_name, int std_age, String std_address, int std_contacr){
+        this.std_id = std_id;
+        this.std_name = std_name;
+        this.std_age = std_age;
+        this.std_address = std_address;
+        this.std_contacr = std_contacr;
+    }
 
-	// creation of public getter and setter --> for student Name
-
-	// creation of public constructor
-	public Student(String user_fname,
-			String user_lname,
-			String user_email,
-			String user_contact,
-			String user_address,
-			String user_pass) {
-		this.user_fname = user_fname;
-		this.user_lname = user_lname;
-		this.user_email = user_email;
-		this.user_contact = user_contact;
-		this.user_address = user_address;
-		this.user_pass = user_pass;
-
-	}
+   
 
 }

@@ -8,7 +8,7 @@ public class DbConnection {
 
     public Connection connection;
 
-    Statement statement;
+    PreparedStatement pst;
 
     ResultSet resultSet;
 
@@ -18,15 +18,15 @@ public class DbConnection {
 
         try {
 
-            String username = "root";
+            String username = "sql6580643";
 
-            String password = "root";
+            String password = "B4gYDYYSZV";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/BRS", username, password);
+                    "jdbc:mysql://sql6.freesqldatabase.com/sql6580643", username, password);
 
             if (connection != null) {
 
@@ -38,7 +38,7 @@ public class DbConnection {
 
             }
 
-            statement = connection.createStatement();
+            pst = connection.prepareStatement("select * from user where username=? and password=?");
 
         } catch (Exception e) {
 
@@ -56,7 +56,7 @@ public class DbConnection {
 
         try {
 
-            value = statement.executeUpdate(query);
+            value = pst.executeUpdate(query);
 
             connection.close();
 
@@ -78,7 +78,7 @@ public class DbConnection {
 
         try {
 
-            resultSet = statement.executeQuery(query);
+            resultSet = pst.executeQuery(query);
 
         } catch (SQLException e) {
 
@@ -88,6 +88,29 @@ public class DbConnection {
 
         return resultSet;
 
+    }
+
+    public Boolean checkLogin(String uname, String pwd) {
+        try {
+
+            pst.setString(1, uname); // this replaces the 1st "?" in the query for username
+            pst.setString(2, pwd); // this replaces the 2st "?" in the query for password
+            // executes the prepared statement
+            resultSet = pst.executeQuery();
+            if (resultSet.next()) {
+                System.out.print("Success");
+                // TRUE if the query founds any corresponding data
+                return true;
+            } else {
+                System.out.print("Failed");
+
+                return false;
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("error while validating" + e);
+            return false;
+        }
     }
 
     public static void main(String[] args) {
