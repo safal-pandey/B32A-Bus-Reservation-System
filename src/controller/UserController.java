@@ -15,8 +15,10 @@ public class UserController {
         String pass = user.getPass();
         String cpass = user.getCpass();
         String sq = user.getSq();
-        String insertQuery = "insert into user(username,email,dob,pass,cpass,sq)" + "values('" + username + "','"
-                + email + "','" + dob + "','" + pass + "','" + cpass + "','" + sq + "')";
+        String contact = user.getContact();
+        String insertQuery = "insert into user(username,email,dob,pass,sq,contact)" + "values('" + username
+                + "','"
+                + email + "','" + dob + "','" + pass + "','" + sq + "','" + contact + "')";
         dbConnection = new DbConnection();
         int result = dbConnection.manipulate(insertQuery);
         return result;
@@ -25,7 +27,7 @@ public class UserController {
     public ResultSet login(User user) {
         String email = user.getEmail();
         String pass = user.getPass();
-        String selectQuery = "select * from user where email='" + email + "'+pass='" + pass + "'";
+        String selectQuery = "select * from user where email='" + email + "' and pass='" + pass + "'";
         dbConnection = new DbConnection();
         ResultSet result = dbConnection.retrieve(selectQuery);
         return result;
@@ -45,5 +47,21 @@ public class UserController {
         dbConnection = new DbConnection();
         int result = dbConnection.manipulate(updateQuery);
         return result;
+    }
+
+    public ResultSet selectdetails(User user) {
+        String selectQuery = "select * from user where status='" + "active" + "'";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectQuery);
+        return result;
+
+    }
+
+    public ResultSet selectEmail(User user) {
+        String selectQuery = "select email from user where status='" + "active" + "'";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectQuery);
+        return result;
+
     }
 }

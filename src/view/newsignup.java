@@ -57,7 +57,7 @@ public class newsignup extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new AbsoluteLayout());
 
         jPanel1.setLayout(null);
 
@@ -163,7 +163,7 @@ public class newsignup extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, -4, 1200, 600);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 600));
+        getContentPane().add(jPanel1, new AbsoluteConstraints(0, 0, 1200, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,6 +189,7 @@ public class newsignup extends javax.swing.JFrame {
         String Cpass = tfcpass.getText();
         String dob = tfdob.getText();
         String sq = tfsq.getText();
+        String contact = tfphone.getText();
         Connection conn;
         Statement pst;
         ResultSet rs;
@@ -197,7 +198,7 @@ public class newsignup extends javax.swing.JFrame {
         if (evt.getSource() == btnsignup) {
 
             try {
-                User u1 = new User(username, email, pass, Cpass, dob, sq);
+                User u1 = new User(username, email, pass, Cpass, dob, sq, contact);
                 UserController uc = new UserController();
                 int result = uc.insertDetails(u1);
                 if (result > 0) {

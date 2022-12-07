@@ -224,7 +224,7 @@ public class viewTickett extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
             model.setRowCount(0);
-            Ticket t1 = new Ticket(0, 0, null, null, null, 0);
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null);
             TicketController tc = new TicketController();
             ResultSet result = tc.viewTicket(t1);
             while (result.next()) {
