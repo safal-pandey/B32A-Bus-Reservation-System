@@ -7,69 +7,93 @@ public class Ticket {
     private String seat_no;
     private String ticket_status;
     private int ticket_price;
+    private String time;
+    private String from;
+    private String to;
 
-    // creation of public getter and setter
-
-    public int getticket_no() {
-        return this.ticket_no;
-    }
-
-    public int getbus_no() {
-        return this.bus_no;
-    }
-
-    public String getuser_email() {
-        return this.user_email;
-    }
-
-    public String getseat_no() {
-        return this.seat_no;
-    }
-
-    public String getticket_status() {
-        return this.ticket_status;
-    }
-
-    public int getticket_price() {
-        return this.ticket_price;
-    }
-
-    public void setticket_no(int newticket_no) {
-        this.ticket_no = newticket_no;
-    }
-
-    public void setbus_no(int newbus_no) {
-        this.bus_no = newbus_no;
-    }
-
-    public void setuser_email(String newuser_email) {
-        this.user_email = newuser_email;
-    }
-
-    public void setseat_no(String newseat_no) {
-        this.seat_no = newseat_no;
-    }
-
-    public void setticket_status(String newticket_status) {
-        this.ticket_status = newticket_status;
-    }
-
-    public void setticket_price(int newticket_price) {
-        this.ticket_price = newticket_price;
-    }
-
-    public Ticket(int ticket_no,
-            int bus_no,
-            String user_email,
-            String seat_no,
-            String ticket_status,
-            int ticket_price) {
+    public Ticket(int ticket_no, int bus_no, String user_email, String seat_no, String ticket_status, int ticket_price,
+            String time, String from, String to) {
         this.ticket_no = ticket_no;
         this.bus_no = bus_no;
         this.user_email = user_email;
         this.seat_no = seat_no;
-        this.ticket_price = ticket_price;
         this.ticket_status = ticket_status;
-
+        this.ticket_price = ticket_price;
+        this.time = time;
+        this.from = from;
+        this.to = to;
     }
+
+    public int getTicket_no() {
+        return this.ticket_no;
+    }
+
+    public void setTicket_no(int ticket_no) {
+        this.ticket_no = ticket_no;
+    }
+
+    public int getBus_no() {
+        return this.bus_no;
+    }
+
+    public void setBus_no(int bus_no) {
+        this.bus_no = bus_no;
+    }
+
+    public String getUser_email() {
+        return this.user_email;
+    }
+
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
+    }
+
+    public String getSeat_no() {
+        return this.seat_no;
+    }
+
+    public void setSeat_no(String seat_no) {
+        this.seat_no = seat_no;
+    }
+
+    public String getTicket_status() {
+        return this.ticket_status;
+    }
+
+    public void setTicket_status(String ticket_status) {
+        this.ticket_status = ticket_status;
+    }
+
+    public int getTicket_price() {
+        return this.ticket_price;
+    }
+
+    public void setTicket_price(int ticket_price) {
+        this.ticket_price = ticket_price;
+    }
+
+    public String getTime() {
+        return this.time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getFrom() {
+        return this.from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getTo() {
+        return this.to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
 }

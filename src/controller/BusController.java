@@ -37,4 +37,11 @@ public class BusController {
         return result;
     }
 
+    public ResultSet viewBus(Bus bus) {
+        String viewdetails = "select from_city,to_city from bus";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(viewdetails);
+        return result;
+    }
+
 }
