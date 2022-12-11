@@ -84,13 +84,14 @@ public class UserController {
         return rs;
     }
 
-    public int changePass(User user) {
+    public int changePass(User user){
         String pass = user.getPass();
-        String query = "update user set pass='" + pass + "' where status='" + "active" + "'";
+        String query = "update user set pass='"+pass+"' where status='"+"active"+"'";
         dbConnection = new DbConnection();
         int result = dbConnection.manipulate(query);
         return result;
 
     }
 
+    
 }
