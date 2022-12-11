@@ -93,4 +93,16 @@ public class TicketController {
         ResultSet result = dbConnection.retrieve(selectQuery);
         return result;
     }
+
+    public int updateTicket(Ticket ticket){
+        
+        String seatno = ticket.getSeat_no();
+        int price = ticket.getTicket_price();
+        String time = ticket.getTime();
+
+        String query = "update ticket set seat_no='"+seatno+"',ticket_price='"+price+"',time='"+time+"' where ticket_status='"+"active"+"' ";
+        dbConnection = new DbConnection();
+        int result= dbConnection.manipulate(query);
+        return result;
+    }
 }
