@@ -44,4 +44,16 @@ public class BusController {
         return result;
     }
 
+    public int updateBus(Bus bus){
+        String fromcity = bus.getFrom_city();
+        String tocity = bus.getTo_city();
+        String license_no = bus.getLicense_no();
+        int seat_num = bus.getSeat_num();
+
+        String query = "update bus set from_city='"+fromcity+"',to_city ='"+tocity+"',license_no='"+license_no+"',seat_num='"+seat_num+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
 }

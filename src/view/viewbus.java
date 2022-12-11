@@ -36,6 +36,7 @@ public class viewbus extends javax.swing.JFrame {
          */
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
@@ -50,15 +51,13 @@ public class viewbus extends javax.swing.JFrame {
                 jToggleButton6 = new javax.swing.JToggleButton();
                 jToggleButton7 = new javax.swing.JToggleButton();
                 jButton2 = new javax.swing.JButton();
-                jTabbedPane1 = new javax.swing.JTabbedPane();
-                jScrollPane1 = new javax.swing.JScrollPane();
-                jTable1 = new javax.swing.JTable();
+                jScrollPane2 = new javax.swing.JScrollPane();
+                busTable = new javax.swing.JTable();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
                 jPanel1.setBackground(new java.awt.Color(0, 204, 153));
 
-                jButton1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
                 jButton1.setText("Update");
 
                 jToggleButton1.setText("My profile");
@@ -89,81 +88,83 @@ public class viewbus extends javax.swing.JFrame {
                         }
                 });
 
-                jButton2.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
                 jButton2.setText("Delete");
 
-                jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                busTable.setModel(new javax.swing.table.DefaultTableModel(
                                 new Object[][] {
-                                                { null, null, null, null },
-                                                { null, null, null, null },
-                                                { null, null, null, null },
-                                                { null, null, null, null }
+                                                { null, null, null, null, null },
+                                                { null, null, null, null, null },
+                                                { null, null, null, null, null },
+                                                { null, null, null, null, null }
                                 },
                                 new String[] {
-                                                "Bus no", "Seat no", "From city", "To city", "License no"
+                                                "Bus no", "from city", "to city", "Num of seat", "License no"
                                 }));
-                jScrollPane1.setViewportView(jTable1);
-
-                jTabbedPane1.addTab("tab1", jScrollPane1);
+                jScrollPane2.setViewportView(busTable);
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
                 jPanel1Layout.setHorizontalGroup(
                                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(46, 46, 46)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addComponent(jLabel1,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                777,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                jPanel1Layout
-                                                                                                                .createSequentialGroup()
-                                                                                                                .addGap(41, 41, 41)
-                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                .createParallelGroup(
-                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                .addComponent(jTabbedPane1,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                657,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                .addComponent(jButton1)
-                                                                                                                                                .addGap(53, 53, 53)
-                                                                                                                                                .addComponent(jButton2)))))
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(jToggleButton6)
-                                                                .addGap(30, 30, 30)
-                                                                .addComponent(jToggleButton2)
-                                                                .addGap(36, 36, 36)
-                                                                .addComponent(jToggleButton7)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jToggleButton4)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jToggleButton5)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                39,
-                                                                                Short.MAX_VALUE)
-                                                                .addComponent(jToggleButton1)
-                                                                .addGap(47, 47, 47)
-                                                                .addComponent(jToggleButton3)
-                                                                .addGap(69, 69, 69)));
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addGroup(jPanel1Layout
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(jButton1)
+                                                                                                .addGap(29, 29, 29)
+                                                                                                .addComponent(jButton2)
+                                                                                                .addContainerGap(
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                Short.MAX_VALUE))
+                                                                                .addGroup(jPanel1Layout
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(jToggleButton6)
+                                                                                                .addGap(35, 35, 35)
+                                                                                                .addComponent(jToggleButton2)
+                                                                                                .addGap(53, 53, 53)
+                                                                                                .addComponent(jToggleButton7)
+                                                                                                .addGap(50, 50, 50)
+                                                                                                .addComponent(jToggleButton4)
+                                                                                                .addGap(48, 48, 48)
+                                                                                                .addComponent(jToggleButton5)
+                                                                                                .addPreferredGap(
+                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                52,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addComponent(jToggleButton1)
+                                                                                                .addGap(37, 37, 37)
+                                                                                                .addComponent(jToggleButton3)
+                                                                                                .addGap(33, 33, 33))
+                                                                                .addGroup(jPanel1Layout
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(jLabel1,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addContainerGap())))
+                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                jPanel1Layout.createSequentialGroup()
+                                                                                                .addContainerGap(49,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addComponent(jScrollPane2,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                795,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addContainerGap(33,
+                                                                                                                Short.MAX_VALUE))));
                 jPanel1Layout.setVerticalGroup(
                                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGap(32, 32, 32)
+                                                                .addContainerGap()
                                                                 .addComponent(jLabel1,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                 39,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addGap(38, 38, 38)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.BASELINE)
                                                                                 .addComponent(jToggleButton6)
@@ -173,15 +174,9 @@ public class viewbus extends javax.swing.JFrame {
                                                                                 .addComponent(jToggleButton7)
                                                                                 .addComponent(jToggleButton4)
                                                                                 .addComponent(jToggleButton3))
-                                                                .addGap(29, 29, 29)
-                                                                .addComponent(jTabbedPane1,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                208,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                36,
-                                                                                Short.MAX_VALUE)
+                                                                                297, Short.MAX_VALUE)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.BASELINE)
                                                                                 .addComponent(jButton1,
@@ -192,31 +187,32 @@ public class viewbus extends javax.swing.JFrame {
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                 28,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(29, 29, 29)));
-
-                jTabbedPane1.getAccessibleContext().setAccessibleName("Bus");
+                                                                .addGap(29, 29, 29))
+                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                jPanel1Layout.createSequentialGroup()
+                                                                                                .addContainerGap(139,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addComponent(jScrollPane2,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                228,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addContainerGap(93,
+                                                                                                                Short.MAX_VALUE))));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(jPanel1,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                .addContainerGap()));
+                                                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
                 layout.setVerticalGroup(
                                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(jPanel1,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)));
+                                                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
@@ -232,7 +228,7 @@ public class viewbus extends javax.swing.JFrame {
 
         public void table() {
                 try {
-                        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                        DefaultTableModel model = (DefaultTableModel) busTable.getModel();
                         model.setRowCount(0);
                         Bus b1 = new Bus(0, 0, null, null, null, null);
                         BusController bc = new BusController();
@@ -303,13 +299,12 @@ public class viewbus extends javax.swing.JFrame {
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JTable busTable;
         private javax.swing.JButton jButton1;
         private javax.swing.JButton jButton2;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JPanel jPanel1;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JTabbedPane jTabbedPane1;
-        private javax.swing.JTable jTable1;
+        private javax.swing.JScrollPane jScrollPane2;
         private javax.swing.JToggleButton jToggleButton1;
         private javax.swing.JToggleButton jToggleButton2;
         private javax.swing.JToggleButton jToggleButton3;

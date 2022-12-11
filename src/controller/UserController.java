@@ -64,4 +64,34 @@ public class UserController {
         return result;
 
     }
+
+    public int resetPass(User user) {
+        String email = user.getEmail();
+        String pass = user.getPass();
+        String sq = user.getSq();
+
+        String resetQuery = "update user set pass='" + pass + "' where email='" + email + "' and sq='" + sq + "'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(resetQuery);
+        return result;
+    }
+
+    public ResultSet passset(User user) {
+        String pass = user.getPass();
+        String query = "select pass from user where status='" + "active" + "' and pass='" + pass + "'";
+        dbConnection = new DbConnection();
+        ResultSet rs = dbConnection.retrieve(query);
+        return rs;
+    }
+
+    public int changePass(User user){
+        String pass = user.getPass();
+        String query = "update user set pass='"+pass+"' where status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+
+    }
+
+    
 }
