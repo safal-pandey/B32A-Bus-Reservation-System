@@ -198,29 +198,27 @@ public class newsignup extends javax.swing.JFrame {
         ResultSet rs;
         int value;
 
-        if (username.equals("") || email.equals("") || pass.equals("") || Cpass.equals("") || dob.equals("") || sq.equals("") || contact.equals("")) {
-JOptionPane.showMessageDialog(this, "Please fill all the fields");
+        if (username.equals("") || email.equals("") || pass.equals("") || Cpass.equals("") || dob.equals("")
+                || sq.equals("") || contact.equals("")) {
+            JOptionPane.showMessageDialog(this, "Please fill all the fields");
 
         }
 
-        else if(nameValid.nameVerify(username)){
+        else if (nameValid.nameVerify(username)) {
             JOptionPane.showMessageDialog(this, "Invalid Name");
-        }
-        else if(emailValid.emailVerify(email)){
+        } else if (emailValid.emailVerify(email)) {
             JOptionPane.showMessageDialog(this, "Invalid Email");
-        }
-        else if(dateValid.dateVerify(dob)){
+        } else if (dateValid.dateVerify(dob)) {
             JOptionPane.showMessageDialog(this, "Invalid Date");
-        }
-       else if(phoneValid.phoneVerify(contact)){
+        } else if (phoneValid.phoneVerify(contact)) {
             JOptionPane.showMessageDialog(this, "Invalid Phone Number");
-        }
-        else if(!pass.equals(Cpass)){
+        } else if (!pass.equals(Cpass)) {
             JOptionPane.showMessageDialog(this, "Password does not match");
         }
-        
-        // !emailValid.emailVerify(email) && !contactValid.contactVerify(contact) && !nameValid.nameVerify(username) && !dobValid.dobVerify
-        else{
+
+        // !emailValid.emailVerify(email) && !contactValid.contactVerify(contact) &&
+        // !nameValid.nameVerify(username) && !dobValid.dobVerify
+        else {
             try {
                 User u1 = new User(username, email, pass, Cpass, dob, sq, contact, contact);
                 UserController uc = new UserController();
@@ -233,7 +231,7 @@ JOptionPane.showMessageDialog(this, "Please fill all the fields");
                 System.out.println("sql error" + ex);
                 // Logger.getLogger(Signnnup.class.getName()).log(Level.SEVERE, null, ex);
 
-        }
+            }
 
         }
 
