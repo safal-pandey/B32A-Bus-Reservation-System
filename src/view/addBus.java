@@ -16,12 +16,12 @@ import models.Bus;
  *
  * @author budat
  */
-public class MainFrame extends javax.swing.JFrame {
+public class addBus extends javax.swing.JFrame {
 
     /**
      * Creates new form MainFrame
      */
-    public MainFrame() {
+    public addBus() {
         initComponents();
     }
 
