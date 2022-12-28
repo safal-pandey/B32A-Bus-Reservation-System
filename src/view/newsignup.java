@@ -204,13 +204,13 @@ public class newsignup extends javax.swing.JFrame {
 
         }
 
-        else if (nameValid.nameVerify(username)) {
+        else if (!nameValid.nameVerify(username)) {
             JOptionPane.showMessageDialog(this, "Invalid Name");
-        } else if (emailValid.emailVerify(email)) {
+        } else if (!emailValid.emailVerify(email)) {
             JOptionPane.showMessageDialog(this, "Invalid Email");
-        } else if (dateValid.dateVerify(dob)) {
+        } else if (!dateValid.dateVerify(dob)) {
             JOptionPane.showMessageDialog(this, "Invalid Date");
-        } else if (phoneValid.phoneVerify(contact)) {
+        } else if (!phoneValid.phoneVerify(contact)) {
             JOptionPane.showMessageDialog(this, "Invalid Phone Number");
         } else if (!pass.equals(Cpass)) {
             JOptionPane.showMessageDialog(this, "Password does not match");
