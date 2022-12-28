@@ -42,7 +42,11 @@ public class Bookticket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -68,6 +72,9 @@ public class Bookticket extends javax.swing.JFrame {
         bookBTn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         timeText = new javax.swing.JTextField();
+        dateText = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        exitBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(83, 164, 139));
@@ -75,23 +82,23 @@ public class Bookticket extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 204, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(822, 656));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Ticket No");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Bus No");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("From city");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("To city");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Seat no");
 
@@ -122,9 +129,6 @@ public class Bookticket extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
-
-            private void jButton5ActionPerformed(ActionEvent evt) {
-            }
         });
 
         jButton6.setText("My Profile");
@@ -134,16 +138,19 @@ public class Bookticket extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
+        });
 
-            private void jButton3ActionPerformed(ActionEvent evt) {
+        priceText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priceTextActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Ticket Price");
 
-        // bookBTn.setAction(dispose);
+        
         bookBTn.setText("Book Ticket");
         bookBTn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +158,7 @@ public class Bookticket extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Time");
 
@@ -161,192 +168,162 @@ public class Bookticket extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Date");
+
+        exitBtn.setText("Exit");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(87, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(24, 24, 24)
-                                                        .addComponent(jLabel9)
-                                                        .addGap(32, 32, 32)
-                                                        .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                false)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                jPanel1Layout.createSequentialGroup()
-                                                                        .addComponent(jLabel8)
-                                                                        .addGap(18, 18, 18)
-                                                                        .addComponent(priceText))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                jPanel1Layout.createSequentialGroup()
-                                                                        .addComponent(jLabel5)
-                                                                        .addGap(45, 45, 45)
-                                                                        .addComponent(seatText))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                jPanel1Layout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addComponent(jLabel3,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        71,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addPreferredGap(
-                                                                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                .addComponent(idText,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        163,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addGroup(jPanel1Layout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                jPanel1Layout
-                                                                                                        .createSequentialGroup()
-                                                                                                        .addComponent(
-                                                                                                                jLabel2,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                53,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addGap(18, 18,
-                                                                                                                18))
-                                                                                        .addGroup(jPanel1Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(jLabel4)
-                                                                                                .addGap(27, 27, 27)))
-                                                                                .addGroup(jPanel1Layout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                false)
-                                                                                        .addComponent(fromText,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                163,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(noText,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                163,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                jPanel1Layout.createSequentialGroup()
-                                                                        .addComponent(jLabel6)
-                                                                        .addGap(41, 41, 41)
-                                                                        .addComponent(toText,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                168,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jButton1)
-                                                        .addGap(38, 38, 38)
-                                                        .addComponent(jButton2)
-                                                        .addGap(36, 36, 36)
-                                                        .addComponent(jButton4)
-                                                        .addGap(38, 38, 38)
-                                                        .addComponent(jButton5))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(bookBTn, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(40, 40, 40)))
-                                .addGap(38, 38, 38)
-                                .addComponent(jButton6)
-                                .addGap(38, 38, 38)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 84,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(64, 64, 64)));
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 41,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jButton1)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jButton2)
+                                        .addGap(36, 36, 36)
                                         .addComponent(jButton4)
-                                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58,
-                                        Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel9))
-                                .addGap(20, 20, 20)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(noText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(fromText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(toText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel6))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(seatText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(priceText, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel8))
-                                .addGap(18, 18, 18)
-                                .addComponent(bookBTn, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(130, 130, 130)));
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jButton5)))
+                                .addGap(38, 38, 38))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(priceText, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(seatText))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel6))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(toText)
+                                            .addComponent(noText, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                            .addComponent(fromText)))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10))
+                                        .addGap(71, 71, 71)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(dateText)
+                                            .addComponent(timeText))))
+                                .addGap(40, 40, 40)))
+                        .addComponent(jButton6)
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(bookBTn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(329, 329, 329))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(exitBtn)
+                        .addGap(27, 27, 27))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fromText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(toText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(seatText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(priceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addComponent(bookBTn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(exitBtn)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
-                                .addContainerGap()));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    protected void priceTextActionPerformed(ActionEvent evt) {
+}
+
+protected void jButton3ActionPerformed(ActionEvent evt) {
+}
+
+private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+        new UserController().logout();
+        dispose();
+    }//GEN-LAST:event_exitBtnActionPerformed
 
     private void seatTextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_seatTextActionPerformed
         // TODO add your handling code here:
@@ -360,7 +337,7 @@ public class Bookticket extends javax.swing.JFrame {
 
         try {
             String email = null;
-            User s1 = new User(null, null, null, null, null, null, null);
+            User s1 = new User(null, null, null, null, null, null, null, null);
             UserController sc = new UserController();
             ResultSet rs = sc.selectEmail(s1);
             while (rs.next()) {
@@ -369,7 +346,7 @@ public class Bookticket extends javax.swing.JFrame {
 
             Ticket t1 = new Ticket(Integer.parseInt(idText.getText()), 0, email, null, null,
                     0, null,
-                    null, null);
+                    null, null, null, null, null);
             TicketController tc = new TicketController();
             int result = tc.updateDetails(t1);
             if (result > 0) {
@@ -392,11 +369,14 @@ public class Bookticket extends javax.swing.JFrame {
         st.setVisible(true);
     }
 
+    private void jButton5ActionPerformed(ActionEvent evt) {
+    }
+
     public void display() {
         try {
-            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null);
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null, null, null, null);
             TicketController tc = new TicketController();
-            ResultSet rs = tc.takeDetails(t1);
+            ResultSet rs = tc.bookDetails(t1);
             while (rs.next()) {
                 String id = rs.getString(1);
                 String no = rs.getString(2);
@@ -405,6 +385,7 @@ public class Bookticket extends javax.swing.JFrame {
                 String seat = rs.getString(5);
                 String price = rs.getString(6);
                 String time = rs.getString(7);
+                String date =rs.getString(8);
 
                 idText.setText(id);
                 noText.setText(no);
@@ -413,6 +394,7 @@ public class Bookticket extends javax.swing.JFrame {
                 seatText.setText(seat);
                 priceText.setText(price);
                 timeText.setText(time);
+                dateText.setText(date);
             }
         } catch (Exception e) {
             // TODO: handle exception
@@ -470,6 +452,8 @@ public class Bookticket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bookBTn;
+    private javax.swing.JTextField dateText;
+    private javax.swing.JButton exitBtn;
     private javax.swing.JTextField fromText;
     private javax.swing.JTextField idText;
     private javax.swing.JButton jButton1;
@@ -478,6 +462,7 @@ public class Bookticket extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

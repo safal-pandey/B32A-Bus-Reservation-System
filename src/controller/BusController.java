@@ -49,11 +49,19 @@ public class BusController {
         String tocity = bus.getTo_city();
         String license_no = bus.getLicense_no();
         int seat_num = bus.getSeat_num();
+        int bus_id = bus.getBus_no();
 
-        String query = "update bus set from_city='"+fromcity+"',to_city ='"+tocity+"',license_no='"+license_no+"',seat_num='"+seat_num+"'";
+        String query = "update bus set from_city='"+fromcity+"',to_city ='"+tocity+"',license_no='"+license_no+"',seat_num='"+seat_num+"' where bus_no='"+bus_id+"'";
         dbConnection = new DbConnection();
         int result = dbConnection.manipulate(query);
         return result;
     }
+    public int deleteBus(Bus bus){
+        int BusId  = bus.getBus_no();
+        String deleteQuery = "delete from bus where bus_no='"+BusId+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(deleteQuery);
+        return result;
+    }   
 
 }

@@ -9,6 +9,34 @@ public class User {
 	private String dob;
 	private String sq;
 	private String contact;
+	
+	private String contact_us;
+
+	public String getContact_us() {
+		return this.contact_us;
+	}
+
+	public void setContact_us(String contact_us) {
+		this.contact_us = contact_us;
+	}
+
+	public User(String username, String email, String pass, String cpass, String dob, String sq, String contact,  String contact_us) {
+		this.username = username;
+		this.email = email;
+		this.pass = pass;
+		this.cpass = cpass;
+		this.dob = dob;
+		this.sq = sq;
+		this.contact = contact;
+		
+		this.contact_us = contact_us;
+	}
+
+	
+
+	
+
+	
 
 	public String getUsername() {
 		return this.username;
@@ -66,14 +94,6 @@ public class User {
 		this.contact = contact;
 	}
 
-	public User(String username, String email, String pass, String cpass, String dob, String sq, String contact) {
-		this.username = username;
-		this.email = email;
-		this.pass = pass;
-		this.cpass = cpass;
-		this.dob = dob;
-		this.sq = sq;
-		this.contact = contact;
-	}
+	
 
 }
