@@ -234,8 +234,8 @@ public class viewbus extends javax.swing.JFrame {
 
     protected void addbusBtnActionPerformed(ActionEvent evt) {
         dispose();
-        MainFrame mf = new MainFrame();
-        mf.setVisible(true);
+        addBus b1=  new addBus();
+        b1.setVisible(true);
     }
 
     protected void myprofileBtnActionPerformed(ActionEvent evt) {
