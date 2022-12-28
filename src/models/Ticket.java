@@ -10,19 +10,9 @@ public class Ticket {
     private String time;
     private String from;
     private String to;
-
-    public Ticket(int ticket_no, int bus_no, String user_email, String seat_no, String ticket_status, int ticket_price,
-            String time, String from, String to) {
-        this.ticket_no = ticket_no;
-        this.bus_no = bus_no;
-        this.user_email = user_email;
-        this.seat_no = seat_no;
-        this.ticket_status = ticket_status;
-        this.ticket_price = ticket_price;
-        this.time = time;
-        this.from = from;
-        this.to = to;
-    }
+    private String report;
+    private String date;
+    private String rate;
 
     public int getTicket_no() {
         return this.ticket_no;
@@ -94,6 +84,45 @@ public class Ticket {
 
     public void setTo(String to) {
         this.to = to;
+    }
+
+    public String getReport() {
+        return this.report;
+    }
+
+    public void setReport(String report) {
+        this.report = report;
+    }
+
+    public String getDate() {
+        return this.date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getRate() {
+        return this.rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
+
+    public Ticket(int ticket_no, int bus_no, String user_email, String seat_no, String ticket_status, int ticket_price, String time, String from, String to, String report, String date, String rate) {
+        this.ticket_no = ticket_no;
+        this.bus_no = bus_no;
+        this.user_email = user_email;
+        this.seat_no = seat_no;
+        this.ticket_status = ticket_status;
+        this.ticket_price = ticket_price;
+        this.time = time;
+        this.from = from;
+        this.to = to;
+        this.report = report;
+        this.date = date;
+        this.rate = rate;
     }
 
 }

@@ -166,7 +166,7 @@ public class resetPassworduser extends javax.swing.JFrame {
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_resetBtnActionPerformed
         try {
             User u1 = new User(getName(), emailText.getText(), passText.getText(), getName(), getTitle(),
-                    sqText.getText(), getName());
+                    sqText.getText(), getName(),null);
             UserController uc = new UserController();
             int result = uc.resetPass(u1);
             if (result > 0) {

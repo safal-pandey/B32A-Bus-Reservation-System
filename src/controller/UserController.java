@@ -58,7 +58,7 @@ public class UserController {
     }
 
     public ResultSet selectEmail(User user) {
-        String selectQuery = "select email from user where status='" + "active" + "'";
+        String selectQuery = "select email,username,report from user where status='" + "active" + "'";
         dbConnection = new DbConnection();
         ResultSet result = dbConnection.retrieve(selectQuery);
         return result;
@@ -93,5 +93,51 @@ public class UserController {
 
     }
 
+    public int updateProfile(User user){
+        String name = user.getUsername();
+        String phone = user.getContact();
+        String dob = user.getDob();
+        String email = user.getEmail();
+
+        String query = "update user set username='"+name+"',contact='"+phone+"',dob='"+dob+"' where email='"+email+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    public int logout(){
+        String query = "update user set status='"+"inactive"+"' where status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    public int delete(){
+        String query = "delete from user where status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    public int contactUs(User user){
+        String msg = user.getContact_us();
+        String email = user.getEmail();
+        String query = "update user set report='"+msg+"' where email='"+email+"' ";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    public ResultSet getMsg(){
+        String selectQuery = "select email,username,report from user";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectQuery);
+        return result;
+    }
+    
+    
+    
+
+    
     
 }

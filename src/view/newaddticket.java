@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
@@ -35,17 +36,18 @@ public class newaddticket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        homeBtn = new javax.swing.JButton();
+        addbusBtn = new javax.swing.JButton();
+        viewbusBtn = new javax.swing.JButton();
+        addticketBtn = new javax.swing.JButton();
+        ticketsBtn = new javax.swing.JButton();
+        myprofileBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         BusText = new javax.swing.JTextField();
@@ -60,54 +62,66 @@ public class newaddticket extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         timeText = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        timeText1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 153));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        homeBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        homeBtn.setText("Home");
+        homeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                homeBtnActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Add Bus");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        addbusBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addbusBtn.setText("Add Bus");
+        addbusBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                addbusBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setText("View Bus");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        viewbusBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        viewbusBtn.setText("View Bus");
+        viewbusBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                viewbusBtnActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setText("Add Ticket");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        addticketBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addticketBtn.setText("Add Ticket");
+        addticketBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                actionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setText("Tickets");
-
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton6.setText("My Profile");
-
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton7.setText("Log Out");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        ticketsBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ticketsBtn.setText("Tickets");
+        ticketsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                ticketsBtnActionPerformed(evt);
+            }
+        });
+
+        myprofileBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        myprofileBtn.setText("My Profile");
+        myprofileBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myprofileBtnActionPerformed(evt);
+            }
+        });
+
+        logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        logoutBtn.setText("Log Out");
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutBtnActionPerformed(evt);
             }
         });
 
@@ -157,6 +171,9 @@ public class newaddticket extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Time");
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("Date");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -165,36 +182,30 @@ public class newaddticket extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jButton1)
+                                                .addComponent(homeBtn)
                                                 .addGap(42, 42, 42)
-                                                .addComponent(jButton2)
+                                                .addComponent(addbusBtn)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
                                                         405, Short.MAX_VALUE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
                                                 .addGroup(jPanel1Layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                320, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                                .addComponent(jLabel1,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 320,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jButton3)
+                                                                .addComponent(viewbusBtn)
                                                                 .addGap(35, 35, 35)
-                                                                .addComponent(jButton4)
+                                                                .addComponent(addticketBtn)
                                                                 .addGap(38, 38, 38)
-                                                                .addComponent(jButton5)))
+                                                                .addComponent(ticketsBtn)))
                                                 .addGap(36, 36, 36)))
-                                .addComponent(jButton6)
+                                .addComponent(myprofileBtn)
                                 .addGap(33, 33, 33)
-                                .addComponent(jButton7)
+                                .addComponent(logoutBtn)
                                 .addContainerGap(22, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(333, 333, 333)
-                                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 116,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(287, 287, 287)
                                                 .addGroup(jPanel1Layout
@@ -216,9 +227,16 @@ public class newaddticket extends javax.swing.JFrame {
                                                                 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                                 .addGap(6, 6, 6)
-                                                                .addComponent(jLabel7,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 47,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel8,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                47,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel7,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                47,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                 .addGap(27, 27, 27)
                                                 .addGroup(jPanel1Layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
@@ -231,7 +249,12 @@ public class newaddticket extends javax.swing.JFrame {
                                                         .addComponent(SeatText)
                                                         .addComponent(ToCity, javax.swing.GroupLayout.DEFAULT_SIZE, 126,
                                                                 Short.MAX_VALUE)
-                                                        .addComponent(timeText))))
+                                                        .addComponent(timeText)
+                                                        .addComponent(timeText1)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(345, 345, 345)
+                                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 116,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,16 +264,16 @@ public class newaddticket extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(41, 41, 41)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton1)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
+                                        .addComponent(homeBtn)
+                                        .addComponent(addbusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
+                                        .addComponent(viewbusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
+                                        .addComponent(addticketBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton5)
-                                        .addComponent(jButton6)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
+                                        .addComponent(ticketsBtn)
+                                        .addComponent(myprofileBtn)
+                                        .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(66, 66, 66)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -283,9 +306,15 @@ public class newaddticket extends javax.swing.JFrame {
                                         .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel7))
-                                .addGap(45, 45, 45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(timeText1, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70,
+                                        Short.MAX_VALUE)
                                 .addComponent(jButton8)
-                                .addContainerGap(131, Short.MAX_VALUE)));
+                                .addGap(70, 70, 70)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,6 +331,41 @@ public class newaddticket extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    protected void myprofileBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        viewProfile vp = new viewProfile();
+        vp.setVisible(true);
+    }
+
+    protected void ticketsBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        viewTicketadmin vt = new viewTicketadmin();
+        vt.setVisible(true);
+    }
+
+    protected void logoutBtnActionPerformed(ActionEvent evt) {
+    }
+
+    protected void viewbusBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        viewbus vb = new viewbus();
+        vb.setVisible(true);
+
+    }
+
+    protected void addbusBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        MainFrame mf = new MainFrame();
+        mf.setVisible(true);
+
+    }
+
+    protected void homeBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        DashboardAdmin da = new DashboardAdmin();
+        da.setVisible(true);
+    }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -335,7 +399,8 @@ public class newaddticket extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Ticket t1 = new Ticket(0, Integer.parseInt(BusText.getText()), null, SeatText.getText(), "1000",
-                    Integer.parseInt(PriceText.getText()), timeText.getText(), null, null);
+                    Integer.parseInt(PriceText.getText()), timeText.getText(), null, null, null, timeText1.getText(),
+                    null);
             TicketController tc = new TicketController();
             int result = tc.insertDetails(t1);
             if (result > 0) {
@@ -423,13 +488,9 @@ public class newaddticket extends javax.swing.JFrame {
     private javax.swing.JTextField PriceText;
     private javax.swing.JTextField SeatText;
     private javax.swing.JTextField ToCity;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton addbusBtn;
+    private javax.swing.JButton addticketBtn;
+    private javax.swing.JButton homeBtn;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -438,7 +499,13 @@ public class newaddticket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logoutBtn;
+    private javax.swing.JButton myprofileBtn;
+    private javax.swing.JButton ticketsBtn;
     private javax.swing.JTextField timeText;
+    private javax.swing.JTextField timeText1;
+    private javax.swing.JButton viewbusBtn;
     // End of variables declaration//GEN-END:variables
 }

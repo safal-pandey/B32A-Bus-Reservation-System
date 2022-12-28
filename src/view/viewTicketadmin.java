@@ -4,6 +4,14 @@
  */
 package view;
 
+import java.sql.ResultSet;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+import controller.TicketController;
+import models.Ticket;
+
 /**
  *
  * @author gamer
@@ -15,6 +23,7 @@ public class viewTicketadmin extends javax.swing.JFrame {
      */
     public viewTicketadmin() {
         initComponents();
+        table();
     }
 
     /**
@@ -36,9 +45,9 @@ public class viewTicketadmin extends javax.swing.JFrame {
         jToggleButton3 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        deleteBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,81 +88,82 @@ public class viewTicketadmin extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton9.setText("Delete");
-        jToggleButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton9ActionPerformed(evt);
-            }
-        });
-
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Ticket no", "Bus no", "Price", "Time"
+                "Ticket no", "Bus no", "From City", "To City", "Seat no", "Price", "Time", "Date"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jToggleButton8)
+                        .addGap(58, 58, 58)
+                        .addComponent(deleteBtn)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jToggleButton6)
-                                .addGap(46, 46, 46)
+                                .addGap(167, 167, 167)
                                 .addComponent(jToggleButton2)
-                                .addGap(46, 46, 46))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jToggleButton8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jToggleButton9)
-                                .addGap(67, 67, 67)))
-                        .addComponent(jToggleButton7)
-                        .addGap(39, 39, 39)
-                        .addComponent(jToggleButton4)
-                        .addGap(38, 38, 38)
-                        .addComponent(jToggleButton5)
-                        .addGap(46, 46, 46)
-                        .addComponent(jToggleButton1)
-                        .addGap(39, 39, 39)
-                        .addComponent(jToggleButton3)))
-                .addGap(40, 40, 40))
+                                .addGap(104, 104, 104)
+                                .addComponent(jToggleButton7)
+                                .addGap(209, 209, 209)
+                                .addComponent(jToggleButton4)
+                                .addGap(163, 163, 163)
+                                .addComponent(jToggleButton5)
+                                .addGap(162, 162, 162)
+                                .addComponent(jToggleButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 561, Short.MAX_VALUE)
+                                .addComponent(jToggleButton3)))
+                        .addGap(40, 40, 40))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(725, 725, 725))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton6)
                     .addComponent(jToggleButton2)
                     .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton5)
                     .addComponent(jToggleButton7)
                     .addComponent(jToggleButton3)
-                    .addComponent(jToggleButton4))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                    .addComponent(jToggleButton4)
+                    .addComponent(jToggleButton5))
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton8)
-                    .addComponent(jToggleButton9))
-                .addGap(18, 18, 18))
+                    .addComponent(deleteBtn))
+                .addGap(91, 91, 91))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,6 +180,33 @@ public class viewTicketadmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void table() {
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null,null,null,null);
+            TicketController tc = new TicketController();
+            ResultSet result = tc.takeDetails(t1);
+            while (result.next()) {
+                String ticket = result.getString(1);
+                String bus = result.getString(2);
+                String from = result.getString(3);
+                String to = result.getString(4);
+                String seat_no = result.getString(5);
+                String ticket_price = result.getString(6);
+                String time = result.getString(7);
+
+                // JOptionPane.showMessageDialog(null, ticket + " " + bus + " " + seat_no + " "
+                // + ticket_price);
+                Object[] row = { ticket, bus,from,to, seat_no, ticket_price, time };
+                model.addRow(row);
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+    }
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton7ActionPerformed
@@ -182,9 +219,19 @@ public class viewTicketadmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
-    private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton9ActionPerformed
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+       int i = jTable1.getSelectedRow();
+       TableModel model = jTable1.getModel();
+       int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+       try {
+        Ticket t1 = new Ticket(id,0,null,null,null,0,null,null,null,null,null,null);
+        TicketController tc = new TicketController();
+        int result = tc.deleteTicket(t1);
+        table();
+       } catch (Exception e) {
+        // TODO: handle exception
+       }
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +269,7 @@ public class viewTicketadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -234,6 +282,5 @@ public class viewTicketadmin extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
 }

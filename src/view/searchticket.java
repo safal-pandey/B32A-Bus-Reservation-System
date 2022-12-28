@@ -236,7 +236,7 @@ public class searchticket extends javax.swing.JFrame {
         int i = ticketTable.getSelectedRow();
         TableModel model = ticketTable.getModel();
         int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        Ticket t1 = new Ticket(id, 0, null, null, null, 0, null, null, null);
+        Ticket t1 = new Ticket(id, 0, null, null, null, 0, null, null, null,null, null,null);
         TicketController tc = new TicketController();
         int result = tc.updateStatus(t1);
         if (result > 0) {
@@ -259,19 +259,19 @@ public class searchticket extends javax.swing.JFrame {
             }
             DefaultTableModel model = (DefaultTableModel) ticketTable.getModel();
             model.setRowCount(0);
-            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, from, going);
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, from, going,null, from,null);
             TicketController tc = new TicketController();
             ResultSet result = tc.browse(t1);
             while (result.next()) {
                 String ticket = result.getString(1);
                 String bus = result.getString(2);
                 String seat_no = result.getString(4);
-                String ticket_price = result.getString(6);
-                String time = result.getString(7);
+                String ticket_price = result.getString(7);
+                String time = result.getString(6);
 
                 // JOptionPane.showMessageDialog(null, ticket + " " + bus + " " + seat_no + " "
                 // + ticket_price);
-                Object[] row = { ticket, bus, seat_no, ticket_price, time };
+                Object[] row = { ticket, bus, seat_no, ticket_price,time };
                 model.addRow(row);
 
             }
@@ -294,7 +294,7 @@ public class searchticket extends javax.swing.JFrame {
             }
             DefaultTableModel model = (DefaultTableModel) ticketTable.getModel();
             model.setRowCount(0);
-            Ticket t1 = new Ticket(0, 0, null, null, null, Integer.parseInt(price), null, null, null);
+            Ticket t1 = new Ticket(0, 0, null, null, null, Integer.parseInt(price), null, null, null,null,null,null);
             TicketController tc = new TicketController();
             ResultSet result = tc.filter(t1);
             while (result.next()) {
@@ -321,7 +321,7 @@ public class searchticket extends javax.swing.JFrame {
 
     public void combo() {
         try {
-            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null);
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null,null,null,null);
             TicketController tc = new TicketController();
             ResultSet result = tc.priceTicket(t1);
 
@@ -349,15 +349,15 @@ public class searchticket extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) ticketTable.getModel();
             model.setRowCount(0);
-            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null);
+            Ticket t1 = new Ticket(0, 0, null, null, null, 0, null, null, null,null,null,null);
             TicketController tc = new TicketController();
             ResultSet result = tc.viewDetails(t1);
             while (result.next()) {
                 String ticket = result.getString(1);
                 String bus = result.getString(2);
                 String seat_no = result.getString(4);
-                String ticket_price = result.getString(6);
-                String time = result.getString(7);
+                String ticket_price = result.getString(7);
+                String time = result.getString(6);
 
                 // JOptionPane.showMessageDialog(null, ticket + " " + bus + " " + seat_no + " "
                 // + ticket_price);

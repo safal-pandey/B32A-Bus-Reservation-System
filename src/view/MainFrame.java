@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.ActionEvent;
+
 import javax.swing.JOptionPane;
 
 import controller.BusController;
@@ -32,6 +34,9 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -45,13 +50,13 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        submitBTN = new javax.swing.JButton();
+        homeBtn = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        viewbusBtn = new javax.swing.JToggleButton();
+        addticketBtn = new javax.swing.JToggleButton();
+        ticketsBtn = new javax.swing.JToggleButton();
+        myprofileBtn = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         fromCity = new javax.swing.JTextField();
         toCity = new javax.swing.JTextField();
@@ -75,121 +80,125 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("From City");
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("To City");
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Number of Seat");
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel13.setText("Bus LicenseNumber");
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        submitBTN.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        submitBTN.setText("Submit");
+        submitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                submitBTNActionPerformed(evt);
             }
         });
 
-        jToggleButton6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jToggleButton6.setText("Home");
+        homeBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        homeBtn.setText("Home");
+        homeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeBtnActionPerformed(evt);
+            }
+        });
 
-        jToggleButton2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jToggleButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jToggleButton2.setSelected(true);
         jToggleButton2.setText("Add Bus");
 
-        jToggleButton7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jToggleButton7.setText("View Bus");
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+        viewbusBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        viewbusBtn.setText("View Bus");
+        viewbusBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
+                viewbusBtnActionPerformed(evt);
             }
         });
 
-        jToggleButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jToggleButton4.setText("Add Ticket");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        addticketBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        addticketBtn.setText("Add Ticket");
+        addticketBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                addticketBtnActionPerformed(evt);
             }
         });
 
-        jToggleButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jToggleButton5.setText("Tickets");
+        ticketsBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        ticketsBtn.setText("Tickets");
+        ticketsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ticketsBtnActionPerformed(evt);
+            }
+        });
 
-        jToggleButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jToggleButton1.setText("My profile");
+        myprofileBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        myprofileBtn.setText("My profile");
 
-        jToggleButton3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jToggleButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jToggleButton3.setText("Log Out");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(177, 177, 177))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(45, 45, 45)
-                                                .addComponent(jToggleButton6)
-                                                .addGap(26, 26, 26)
-                                                .addComponent(jToggleButton2)
-                                                .addGap(34, 34, 34)
-                                                .addComponent(jToggleButton7)
-                                                .addGap(40, 40, 40)
-                                                .addComponent(jToggleButton4)
-                                                .addGap(35, 35, 35)
-                                                .addComponent(jToggleButton5)
-                                                .addGap(29, 29, 29)
-                                                .addComponent(jToggleButton1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel4)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jToggleButton3))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(338, 338, 338)
-                                                .addComponent(jButton1))
+                                                .addComponent(submitBTN))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(211, 211, 211)
                                                 .addGroup(jPanel1Layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel9)
                                                         .addComponent(jLabel11)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                        .addGroup(jPanel1Layout
+                                                                .createParallelGroup(
                                                                         javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(jLabel13)
-                                                                        .addComponent(jLabel9))
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(jPanel1Layout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING,
-                                                                        false)
-                                                                        .addComponent(licenseNo,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                226,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(toCity,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                226,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(noSeat,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                226,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(fromCity,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                226,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                        .addComponent(jLabel10))))
-                                .addContainerGap(78, Short.MAX_VALUE)));
+                                                                .addComponent(jLabel13,
+                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(jLabel10)))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(jPanel1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                false)
+                                                        .addComponent(licenseNo, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(toCity, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(noSeat, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(fromCity, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(374, 374, 374)
+                                                                .addComponent(jLabel1))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(24, 24, 24)
+                                                                .addComponent(homeBtn)
+                                                                .addGap(26, 26, 26)
+                                                                .addComponent(jToggleButton2)
+                                                                .addGap(34, 34, 34)
+                                                                .addComponent(viewbusBtn)
+                                                                .addGap(40, 40, 40)
+                                                                .addComponent(addticketBtn)
+                                                                .addGap(35, 35, 35)
+                                                                .addComponent(ticketsBtn)
+                                                                .addGap(29, 29, 29)
+                                                                .addComponent(myprofileBtn)
+                                                                .addGap(24, 24, 24)
+                                                                .addComponent(jToggleButton3)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel4)))
+                                .addContainerGap(26, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -200,43 +209,45 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jToggleButton6)
+                                        .addComponent(homeBtn)
                                         .addComponent(jToggleButton2)
-                                        .addComponent(jToggleButton7)
-                                        .addComponent(jToggleButton4)
-                                        .addComponent(jToggleButton5)
-                                        .addComponent(jToggleButton1)
+                                        .addComponent(viewbusBtn)
+                                        .addComponent(addticketBtn)
+                                        .addComponent(ticketsBtn)
+                                        .addComponent(myprofileBtn)
                                         .addComponent(jToggleButton3))
-                                .addGap(50, 50, 50)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77,
+                                        Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(fromCity, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14,
-                                        Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(toCity, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel13)
                                         .addComponent(licenseNo, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 22,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(noSeat, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel11))
-                                .addGap(35, 35, 35)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
+                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addComponent(submitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(107, 107, 107)));
+                                .addGap(106, 106, 106)));
 
         setJMenuBar(jMenuBar1);
 
@@ -244,10 +255,8 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
@@ -257,16 +266,35 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton7ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jToggleButton7ActionPerformed
+    protected void ticketsBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        viewTicketadmin vt = new viewTicketadmin();
+        vt.setVisible(true);
+    }
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jToggleButton4ActionPerformed
+    protected void addticketBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        newaddticket at = new newaddticket();
+        at.setVisible(true);
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    protected void homeBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        DashboardAdmin du = new DashboardAdmin();
+        du.setVisible(true);
+    }
+
+    protected void viewbusBtnActionPerformed(ActionEvent evt) {
+        dispose();
+        viewbus vb = new viewbus();
+        vb.setVisible(true);
+    }
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton6ActionPerformed
         // TODO add your handling code here:
+    }// GEN-LAST:event_jToggleButton6ActionPerformed
+
+    protected void submitBTNActionPerformed(ActionEvent evt) {
         String fromcity = fromCity.getText();
         String tocity = toCity.getText();
         int seat = Integer.parseInt(noSeat.getText());
@@ -281,6 +309,19 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (Exception e) {
             // TODO: handle exception
         }
+    }
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton7ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_jToggleButton7ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+
     }// GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -323,8 +364,9 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton addticketBtn;
     private javax.swing.JTextField fromCity;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JToggleButton homeBtn;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
@@ -336,15 +378,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JTextField licenseNo;
+    private javax.swing.JToggleButton myprofileBtn;
     private javax.swing.JTextField noSeat;
+    private javax.swing.JButton submitBTN;
+    private javax.swing.JToggleButton ticketsBtn;
     private javax.swing.JTextField toCity;
+    private javax.swing.JToggleButton viewbusBtn;
     // End of variables declaration//GEN-END:variables
 }
